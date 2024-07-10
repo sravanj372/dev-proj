@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Code Karo! - Online IDE</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+    <div class="header">
+        <div class="logo"><img src="logo.png" alt="Logo"></div>
+        <div class="title">Code Karo! - Online IDE</div>
+        <button class="theme-toggle-btn" onclick="toggleTheme()">
+            <span class="theme-icon">☀️</span>
+        </button>
+    </div>
+    <div class="container">
+        <div class="left-panel">
+            <div class="control-panel">
+                <button class="btn run-btn" onclick="executeCode()"><i class="fas fa-play"></i> Run</button>
+                <div class="filename-container">
+                    <input type="text" id="filename" placeholder="Untitled" value="Untitled">
+                    <span class="filename-icon"><i class="fas fa-pencil-alt"></i></span>
+                </div>
+                <button class="btn save-btn" onclick="saveCode()"><i class="fas fa-save"></i> Save</button>
+                <label for="languages">Language:</label>
+                <select id="languages" class="languages" onchange="changeLanguage()">
+                    <option value="c">C</option>
+                    <option value="cpp">C++</option>
+                    <option value="php">PHP</option>
+                    <option value="python">Python</option>
+                    <option value="node">Node JS</option>
+                </select>
+            </div>
+            <div class="editor-container">
+                <div class="editor" id="editor"></div>
+            </div>
+        </div>
+        <div class="right-panel">
+            <div class="output-header">Output</div>
+            <div class="output"></div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/theme-monokai.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/theme-chrome.js"></script>
+    <script src="js/ide.js"></script>
+
+</body>
+</html>
